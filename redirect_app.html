@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open in App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Try to open the app first (using Deep Link)
+        function openApp() {
+            window.location.href = "yourapp://deeplink/path"; // Replace with your custom scheme
+            setTimeout(function() {
+                // If app isn't installed, redirect to Play Store after 1 second
+                window.location.href = "https://play.google.com/store/apps/details?id=com.app.wagtail";
+            }, 1000);
+        }
+        // Trigger on page load
+        window.onload = openApp;
+    </script>
+</head>
+<body>
+    <h1>Redirecting to App...</h1>
+    <p>If you're not redirected, <a href="https://play.google.com/store/apps/details?id=com.app.wagtail">click here to install the app</a>.</p>
+</body>
+</html>
